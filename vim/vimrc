@@ -1,25 +1,44 @@
-"  Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
+"  ----------------------
+"  General Settings
+"  ----------------------
+set background=dark
+set splitright
+set hlsearch "to highlight all occurrences of a word while searching for it
+
+set number
+
+
+"""Tabs
+set tabstop=4
+set shiftwidth=4
+
+
+" -------------------
+" Key Maps
+" -------------------
+
+""Hotkey to toggle relative line numbering
+nmap <C-L><C-L> :set invrelativenumber<CR>
+
+" -------------------
+"  Plugins
+"  ------------------
+
+"Specify a directory for plugins
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'jparise/vim-graphql'        " GraphQL syntax
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'wellle/targets.vim' "better text objects
-Plug 'tpope/vim-surround'
-Plug 'wincent/terminus'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-Plug 'preservim/nerdtree'
-Plug 'prettier/vim-prettier', {'do': 'yarn install',
-			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml'] }
-Plug 'vim-airline/vim-airline'
-Plug 'SirVer/ultisnips'
-Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
-Plug 'junegunn/fzf.vim'
+source ~/.vim/plugins/airline.vim
+source ~/.vim/plugins/auto-pairs.vim
+source ~/.vim/plugins/coc.nvim.vim
+source ~/.vim/plugins/commentary.vim
+source ~/.vim/plugins/fzf.vim
+source ~/.vim/plugins/nerdtree.vim
+source ~/.vim/plugins/prettier.vim
+source ~/.vim/plugins/surround.vim
+source ~/.vim/plugins/targets.vim
+source ~/.vim/plugins/terminus.vim
+source ~/.vim/plugins/ultisnips.vim
 
 " Initialize plugin system
 call plug#end()
@@ -65,15 +84,3 @@ nnoremap <C-g> :Ag<Cr>
 "" Open buffers
 nnoremap <silent><leader>b :Buffers<Cr>
 
-set background=dark
-set splitright
-set hlsearch "to highlight all occurrences of a word while searching for it
-
-set number
-""Hotkey to toggle relative line numbering
-nmap <C-L><C-L> :set invrelativenumber<CR>
-
-
-"""Tabs
-set tabstop=4
-set shiftwidth=4"
