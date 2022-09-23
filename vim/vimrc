@@ -89,3 +89,7 @@ nnoremap <C-g> :Ag<Cr>
 "" Open buffers
 nnoremap <silent><leader>b :Buffers<Cr>
 
+"" General options
+set ignorecase
+set smartcase
+set incsearch
