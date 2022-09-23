@@ -93,3 +93,6 @@ nnoremap <silent><leader>b :Buffers<Cr>
 set ignorecase
 set smartcase
 set incsearch
+
+" This unsets the "last search pattern" register by hitting return 
+nnoremap <CR> :noh<CR><CR>
